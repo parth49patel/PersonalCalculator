@@ -10,9 +10,10 @@ import SwiftUI
 struct ExtraButtonView: View {
     var buttonLabel: String
     var buttonBackground: String
+    var action: () -> Void
     
     var body: some View {
-        Button (action: {}){
+        Button (action: {self.action()}){
             Text(buttonLabel)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
@@ -26,5 +27,5 @@ struct ExtraButtonView: View {
 }
 
 #Preview {
-    ExtraButtonView(buttonLabel: "AC", buttonBackground: "ExtraOperation")
+    ExtraButtonView(buttonLabel: "AC", buttonBackground: "ExtraOperation", action: {})
 }

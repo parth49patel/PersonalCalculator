@@ -11,9 +11,10 @@ struct NumberButtonView: View {
     
     var buttonLabel: String
     var buttonBackground: String
+    var action: () -> Void
     
     var body: some View {
-        Button (action: {}){
+        Button (action: {self.action()}){
             Text(buttonLabel)
                 .foregroundStyle(.white)
                 .font(.largeTitle)
@@ -27,5 +28,5 @@ struct NumberButtonView: View {
 }
 
 #Preview {
-    NumberButtonView(buttonLabel: "1", buttonBackground: "ButtonColor")
+    NumberButtonView(buttonLabel: "1", buttonBackground: "ButtonColor", action: {})
 }
