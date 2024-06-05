@@ -9,13 +9,13 @@ import SwiftUI
 
 struct NumberButtonView: View {
     
-    var buttonLabel: String
+    var buttonLabel: Double
     var buttonBackground: String
     var action: () -> Void
     
     var body: some View {
         Button (action: {self.action()}){
-            Text(buttonLabel)
+            Text(String(format: "%.0f", buttonLabel))
                 .foregroundStyle(.white)
                 .font(.largeTitle)
                 .bold()
@@ -28,5 +28,5 @@ struct NumberButtonView: View {
 }
 
 #Preview {
-    NumberButtonView(buttonLabel: "1", buttonBackground: "ButtonColor", action: {})
+    NumberButtonView(buttonLabel: 1, buttonBackground: "ButtonColor", action: {})
 }

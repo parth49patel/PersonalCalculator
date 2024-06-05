@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ZeroButton: View {
-    var buttonLabel: String
+    var buttonLabel: Double
     var buttonBackground: String
     var action: () -> Void
     
@@ -17,7 +17,7 @@ struct ZeroButton: View {
         Button (action: {
             self.action()
         }){
-            Text(buttonLabel)
+            Text(String(format: "%.0f", buttonLabel))
                 .foregroundStyle(.white)
                 .font(.largeTitle)
                 .bold()
@@ -29,5 +29,5 @@ struct ZeroButton: View {
 }
 
 #Preview {
-    ZeroButton(buttonLabel: "0", buttonBackground: "ButtonColor", action: {})
+    ZeroButton(buttonLabel: 0, buttonBackground: "ButtonColor", action: {})
 }
