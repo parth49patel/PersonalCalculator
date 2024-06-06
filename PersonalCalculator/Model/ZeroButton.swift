@@ -19,7 +19,7 @@ struct ZeroButton: View {
         }){
             Text(String(format: "%.0f", buttonLabel))
                 .foregroundStyle(.white)
-                .font(.largeTitle)
+                .font(.system(size: 40, weight: .semibold, design: .rounded))
                 .bold()
         }
         .frame(width: 190, height: 90)

@@ -17,7 +17,7 @@ struct NumberButtonView: View {
         Button (action: {self.action()}){
             Text(String(format: "%.0f", buttonLabel))
                 .foregroundStyle(.white)
-                .font(.largeTitle)
+                .font(.system(size: 40, weight: .semibold, design: .rounded))
                 .bold()
         }
         .frame(width: 90, height: 90)

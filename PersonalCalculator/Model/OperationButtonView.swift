@@ -9,14 +9,15 @@ import SwiftUI
 
 struct OperationButtonView: View {
     var buttonLabel: String
+    var buttonLabelColor: Color
     var buttonBackground: String
     var action: () -> Void
     
     var body: some View {
         Button (action: {self.action()}){
             Text(buttonLabel)
-                .foregroundStyle(.white)
-                .font(.largeTitle)
+                .foregroundStyle(buttonLabelColor)
+                .font(.system(size: 40, weight: .semibold, design: .rounded))
                 .bold()
         }
         .frame(width: 90, height: 90)
@@ -26,5 +27,5 @@ struct OperationButtonView: View {
 }
 
 #Preview {
-    OperationButtonView(buttonLabel: "=", buttonBackground: "OperationColor", action: {})
+    OperationButtonView(buttonLabel: "=", buttonLabelColor: .orange, buttonBackground: "OperationColor", action: {})
 }

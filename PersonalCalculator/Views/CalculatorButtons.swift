@@ -19,13 +19,13 @@ struct CalculatorButtons: View {
             Spacer()
             //The bottom HStack that contains AC, +/-, %, /
             HStack {
-                OperationButtonView(buttonLabel: "AC", buttonBackground: "ExtraOperation", action: {self.buttonTapped("AC")})
+                OperationButtonView(buttonLabel: "AC", buttonLabelColor: .black, buttonBackground: "ExtraOperation", action: {self.buttonTapped("AC")})
                 
-                OperationButtonView(buttonLabel: "+/-", buttonBackground: "ExtraOperation", action: {self.buttonTapped("+/-")})
+                OperationButtonView(buttonLabel: "+/-", buttonLabelColor: .black, buttonBackground: "ExtraOperation", action: {self.buttonTapped("+/-")})
                 
-                OperationButtonView(buttonLabel: "%", buttonBackground: "ExtraOperation", action: {self.buttonTapped("%")})
+                OperationButtonView(buttonLabel: "%", buttonLabelColor: .black, buttonBackground: "ExtraOperation", action: {self.buttonTapped("%")})
                 
-                OperationButtonView(buttonLabel: "/", buttonBackground: "OperationColor", action: {self.buttonTapped("/")})
+                OperationButtonView(buttonLabel: "/", buttonLabelColor: .white, buttonBackground: "OperationColor", action: {self.buttonTapped("/")})
             }
             //The top HStack that contains 7, 8, 9, x
             HStack {
@@ -35,7 +35,7 @@ struct CalculatorButtons: View {
                 
                 NumberButtonView(buttonLabel: 9, buttonBackground: "ButtonColor", action: {self.buttonTapped("9")})
                 
-                OperationButtonView(buttonLabel: "x", buttonBackground: "OperationColor", action: {self.buttonTapped("x")})
+                OperationButtonView(buttonLabel: "x", buttonLabelColor: .white, buttonBackground: "OperationColor", action: {self.buttonTapped("x")})
             }
             //The middle HStack that contains 4, 5, 6, -
             HStack {
@@ -45,7 +45,7 @@ struct CalculatorButtons: View {
                 
                 NumberButtonView(buttonLabel: 6, buttonBackground: "ButtonColor", action: {self.buttonTapped("6")})
                 
-                OperationButtonView(buttonLabel: "-", buttonBackground: "OperationColor", action: {self.buttonTapped("-")})
+                OperationButtonView(buttonLabel: "-", buttonLabelColor: .white, buttonBackground: "OperationColor", action: {self.buttonTapped("-")})
             }
             //The bottom HStack that contains 1, 2, 3, +
             HStack {
@@ -55,15 +55,15 @@ struct CalculatorButtons: View {
                 
                 NumberButtonView(buttonLabel: 3, buttonBackground: "ButtonColor", action: {self.buttonTapped("3")})
                 
-                OperationButtonView(buttonLabel: "+", buttonBackground: "OperationColor", action: {self.buttonTapped("+")})
+                OperationButtonView(buttonLabel: "+", buttonLabelColor: .white, buttonBackground: "OperationColor", action: {self.buttonTapped("+")})
             }
             //The bottom most HStack contains 0, ., =
             HStack {
                 ZeroButton(buttonLabel: 0, buttonBackground: "ButtonColor", action: {self.buttonTapped("0")})
                 
-                OperationButtonView(buttonLabel: ".", buttonBackground: "ButtonColor", action: {self.buttonTapped(".")})
+                OperationButtonView(buttonLabel: ".", buttonLabelColor: .white, buttonBackground: "ButtonColor", action: {self.buttonTapped(".")})
                 
-                OperationButtonView(buttonLabel: "=", buttonBackground: "OperationColor", action: {self.buttonTapped("=")})
+                OperationButtonView(buttonLabel: "=", buttonLabelColor: .white, buttonBackground: "OperationColor", action: {self.buttonTapped("=")})
             }
         }.padding()
     }

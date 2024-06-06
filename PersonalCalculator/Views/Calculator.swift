@@ -15,21 +15,38 @@ struct Calculator: View {
     
     var body: some View {
         
-        //This VStack will contain the answer label
-        VStack{
-            Spacer()
-            HStack{
+        VStack(spacing: 0) {
+        VStack  {
                 Spacer()
-                Text(String(format: "%.f", displayText))
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
+                HStack{
+                    Spacer()
+                    Text(String(format: "%.f", displayText))
+                        .foregroundStyle(.black)
+                        .font(.system(size: 80, weight: .bold, design: .rounded))
+                        .padding()
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .background {
+//                Color.gray.opacity(0.5)
+//                    .ignoresSafeArea()
+//            }
+            
+            CalculatorButtons { button in
+                buttonTapped(button)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .background {
+//                Color(hex: 0x8eadcb)
+//                    .opacity(0.5)
+//                    .ignoresSafeArea()
+//            }
         }
-        CalculatorButtons { button in
-            buttonTapped(button)
-        }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.gray, .white, .black]), startPoint: .top, endPoint: .bottom)
+        )
     }
+
     private func buttonTapped(_ button: String) {
         if let numValue = Double(button) {
             if isFinishedTypingNumber {
@@ -59,4 +76,16 @@ struct Calculator: View {
 }
 #Preview {
     Calculator()
+}
+
+extension Color {
+    init(hex: Int, opacity: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: opacity
+        )
+    }
 }
