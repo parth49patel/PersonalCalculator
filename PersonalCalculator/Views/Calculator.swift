@@ -7,34 +7,6 @@
 
 import SwiftUI
 
-//struct Calculator: View {
-//    
-//    @State var displayText = "0"
-//    @State var calculatorLogic = CalculatorLogic()
-//    
-//    var body: some View {
-//        
-//        VStack(spacing: 0) {
-//        VStack  {
-//                Spacer()
-//                HStack{
-//                    Spacer()
-//                    Text(calculatorLogic.number)
-//                        .foregroundStyle(.black)
-//                        .font(.system(size: 80, weight: .bold, design: .rounded))
-//                        .padding()
-//                }
-//            }
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//
-//            CalculatorButtons()
-//            }
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            .background(
-//                LinearGradient(gradient: Gradient(colors: [.gray, .white, .black]), startPoint: .top, endPoint: .bottom))
-//        }
-//    }
-
 struct Calculator: View {
     
     @State var calculatorLogic = CalculatorLogic()
