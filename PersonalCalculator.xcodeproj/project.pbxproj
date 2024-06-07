@@ -12,10 +12,7 @@
 		517B017A2C0D5A3F00FFE2E2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B01792C0D5A3F00FFE2E2 /* Calculator.swift */; };
 		517B017C2C0D5A4000FFE2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517B017B2C0D5A4000FFE2E2 /* Assets.xcassets */; };
 		517B017F2C0D5A4000FFE2E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517B017E2C0D5A4000FFE2E2 /* Preview Assets.xcassets */; };
-		517B018A2C0D677600FFE2E2 /* NumberButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B01892C0D677600FFE2E2 /* NumberButtonView.swift */; };
-		517B018C2C0D6A3D00FFE2E2 /* OperationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B018B2C0D6A3D00FFE2E2 /* OperationButtonView.swift */; };
-		517B018E2C0D712900FFE2E2 /* ZeroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B018D2C0D712900FFE2E2 /* ZeroButton.swift */; };
-		517B01902C0D76C800FFE2E2 /* CalculatorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B018F2C0D76C800FFE2E2 /* CalculatorButtons.swift */; };
+		51B7B4982C13809A008BC711 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7B4972C13809A008BC711 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +22,7 @@
 		517B01792C0D5A3F00FFE2E2 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		517B017B2C0D5A4000FFE2E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517B017E2C0D5A4000FFE2E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		517B01892C0D677600FFE2E2 /* NumberButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButtonView.swift; sourceTree = "<group>"; };
-		517B018B2C0D6A3D00FFE2E2 /* OperationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButtonView.swift; sourceTree = "<group>"; };
-		517B018D2C0D712900FFE2E2 /* ZeroButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroButton.swift; sourceTree = "<group>"; };
-		517B018F2C0D76C800FFE2E2 /* CalculatorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtons.swift; sourceTree = "<group>"; };
+		51B7B4972C13809A008BC711 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +84,6 @@
 		517B01852C0D66EF00FFE2E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				517B018F2C0D76C800FFE2E2 /* CalculatorButtons.swift */,
 				517B01792C0D5A3F00FFE2E2 /* Calculator.swift */,
 			);
 			path = Views;
@@ -99,9 +92,7 @@
 		517B01862C0D672300FFE2E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				517B01892C0D677600FFE2E2 /* NumberButtonView.swift */,
-				517B018B2C0D6A3D00FFE2E2 /* OperationButtonView.swift */,
-				517B018D2C0D712900FFE2E2 /* ZeroButton.swift */,
+				51B7B4972C13809A008BC711 /* Buttons.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,12 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5119C47B2C0FE5BE009DDA6D /* CalculatorLogic.swift in Sources */,
-				517B018C2C0D6A3D00FFE2E2 /* OperationButtonView.swift in Sources */,
-				517B01902C0D76C800FFE2E2 /* CalculatorButtons.swift in Sources */,
 				517B017A2C0D5A3F00FFE2E2 /* Calculator.swift in Sources */,
-				517B018E2C0D712900FFE2E2 /* ZeroButton.swift in Sources */,
 				517B01782C0D5A3F00FFE2E2 /* PersonalCalculatorApp.swift in Sources */,
-				517B018A2C0D677600FFE2E2 /* NumberButtonView.swift in Sources */,
+				51B7B4982C13809A008BC711 /* Buttons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

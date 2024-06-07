@@ -7,55 +7,68 @@
 
 import Foundation
 
+enum CalculationOperations {
+    case add, subtract, multiply, divide, none
+}
 struct CalculatorLogic {
+    var number = "0"
+    private var operation: CalculationOperations = .none
+    private var numberTapped = 0
     
-    private var number: Double?
-    private var storedNumber: Double?
-    private var operation: String?
-    private var intermediateCalculation: (n1: Double, calcMethod: String)?
-
-    
-    mutating func setNumber(_ number: Double) {
-        self.number = number
-    }
-    mutating func calculate (_ symbol: String) -> Double? {
-        if let n = number {
-            switch symbol {
-                case "+/-":
-                    return n * -1
-                case "AC":
-                    return 0
-                case "%":
-                    return n * 0.01
-                case "=":
-                return performCalculation(n2: n)
-                default:
-                intermediateCalculation = (n1: n, calcMethod: symbol)
+    mutating func calculate(button: Buttons) {
+        switch button {
+        case .add, .subtract, .multiply, .divide:
+            self.operation = buttonToOperation(button)
+            self.numberTapped = Int(self.number) ?? 0
+            self.number = "0"
+        case .equal:
+            let currentValue = self.numberTapped
+            let value = Int(self.number) ?? 0
+            switch self.operation {
+            case .add:
+                self.number = "\(currentValue + value)"
+            case .subtract:
+                self.number = "\(currentValue - value)"
+            case .multiply:
+                self.number = "\(currentValue * value)"
+            case .divide:
+                self.number = "\(currentValue / value)"
+            case .none:
+                break
+            }
+        case .clear:
+            self.number = "0"
+        case .negate:
+            if self.number.hasPrefix("-") {
+                self.number.removeFirst()
+            } else {
+                self.number = "-\(self.number)"
+            }
+        case .modulus:
+            if let value = Double(self.number) {
+                self.number = String(value * 0.01)
+            }
+        default:
+            if self.number == "0" {
+                self.number = button.rawValue
+            } else {
+                self.number += button.rawValue
             }
         }
-        return nil
     }
     
-    func performCalculation(n2 : Double) -> Double? {
-        if let n1 = intermediateCalculation?.n1,
-           let operation = intermediateCalculation?.calcMethod {
-            
-            switch operation {
-            case "+":
-                return n1 + n2
-            case "-":
-                return n1 - n2
-            case "x":
-                return n1 * n2
-            case "/":
-                return n1 / n2
-            default:
-                fatalError("The operation passed in does not match any of the cases.")
-            }
+    private func buttonToOperation(_ button: Buttons) -> CalculationOperations {
+        switch button {
+        case .add:
+            return .add
+        case .subtract:
+            return .subtract
+        case .multiply:
+            return .multiply
+        case .divide:
+            return .divide
+        default:
+            return .none
         }
-        return nil
-        }
-    func getResult() -> Double {
-        return number ?? 0
     }
 }
